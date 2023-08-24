@@ -1,1 +1,24 @@
 
+services:
+  webapp:
+    build: .
+    ports:
+    -  8080:8080
+    -  9080:9080
+    depends_on:
+    - grafana
+
+  loki:
+    image: grafana/loki
+    container_name: loki
+    ports:
+    -  3100:3100
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+    -  9090:9090
+    volumes:
+    -  ./grafana.ini:/etc/grafana/grafana.ini
+    -  ./ds.yaml:/etc/grafana/provisioning/datasources/ds.yaml
