@@ -12,7 +12,7 @@ services:
     ports:
     -  3100:3100
     depends_on:
-      webapp
+    - webapp
 
   grafana:
     image: grafana/grafana:10.0.2
@@ -23,4 +23,4 @@ services:
     -  ./grafana.ini:/etc/grafana/grafana.ini
     -  ./ds.yaml:/etc/grafana/provisioning/datasources/ds.yaml
     depends_on:
-      loki
+    - loki
