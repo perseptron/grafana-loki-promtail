@@ -15,7 +15,7 @@ services:
     - webapp
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:10.0.2
     container_name: grafana
     ports:
     -  9090:9090
