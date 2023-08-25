@@ -14,4 +14,4 @@ RUN wget https://github.com/grafana/loki/releases/download/v2.8.4/promtail-linux
     unzip promtail-linux-amd64.zip -d /usr/local/bin/ && \ 
     chmod +x /usr/local/bin/promtail-linux-amd64 && \
     rm promtail-linux-amd64.zip
-CMD ["/bin/bash", "-c", "/goapp/start.sh && sleep 41"]
+CMD ["/goapp/start.sh"]
