@@ -5,6 +5,11 @@ services:
     ports:
     -  8080:8080
     -  9080:9080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
 
   loki:
     image: grafana/loki
